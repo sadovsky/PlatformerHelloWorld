@@ -327,4 +327,4 @@ autoplay = "new_animation"
 position = Vector2(62, 68)
 
 [node name="seaeater" parent="." instance=ExtResource("9_0tnpc")]
-position = Vector2(177, 71)
+position = Vector2(162, 71)

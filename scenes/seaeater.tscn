@@ -19,7 +19,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0l8pv"]
-size = Vector2(58, 19)
+size = Vector2(45, 18)
 
 [node name="seaeater" type="Node2D"]
 
@@ -31,5 +31,5 @@ autoplay = "default"
 [node name="Killzone" parent="." instance=ExtResource("2_tfo8j")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(1, 0.5)
+position = Vector2(-2, 1)
 shape = SubResource("RectangleShape2D_0l8pv")
