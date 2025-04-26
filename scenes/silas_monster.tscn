@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://dac64uf5fhn63"]
+
+[ext_resource type="Texture2D" uid="uid://rcvnnouvnxge" path="res://assets/sprites/Silas_Monster-Sheet.png" id="1_lu1eo"]
+[ext_resource type="PackedScene" uid="uid://1e8ed31ljb0r" path="res://scenes/killzone.tscn" id="2_jl5ug"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jl5ug"]
+atlas = ExtResource("1_lu1eo")
+region = Rect2(0, 0, 200, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvd5j"]
+atlas = ExtResource("1_lu1eo")
+region = Rect2(200, 0, 200, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8vlh8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jl5ug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvd5j")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pvd5j"]
+size = Vector2(200, 150)
+
+[node name="SilasMonster" type="Node2D"]
+scale = Vector2(0.2, 0.2)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8vlh8")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.397924
+
+[node name="Killzone" parent="." instance=ExtResource("2_jl5ug")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(0, -7.15256e-06)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_pvd5j")

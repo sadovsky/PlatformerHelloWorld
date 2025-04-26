@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddwvsb4121de"]
+
+[ext_resource type="Texture2D" uid="uid://dh6my4qbnaepf" path="res://assets/sprites/sea_eater.png" id="1_iofot"]
+[ext_resource type="PackedScene" uid="uid://1e8ed31ljb0r" path="res://scenes/killzone.tscn" id="2_tfo8j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfo8j"]
+atlas = ExtResource("1_iofot")
+region = Rect2(0, 0, 58, 22)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v5wyi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tfo8j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0l8pv"]
+size = Vector2(58, 19)
+
+[node name="seaeater" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -1)
+sprite_frames = SubResource("SpriteFrames_v5wyi")
+autoplay = "default"
+
+[node name="Killzone" parent="." instance=ExtResource("2_tfo8j")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(1, 0.5)
+shape = SubResource("RectangleShape2D_0l8pv")
